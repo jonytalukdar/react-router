@@ -6,65 +6,40 @@ import About from './components/About';
 import Works from './components/Works';
 import Contact from './components/Contact';
 import WorkDetail from './components/WorkDetail';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-const address = "/about"
-switch(address) {
-  case '/home':
-    // Home page dekhate hobe
-    break;
-  case '/about':
-    // About page dekhate hobe
-    break;
-  case '/works':
-      // Works page dekhate hobe
-    break;
-  case '/contact':
-      // Contact page dekhate hobe
-    break;
-  default: 
-    // 404
-  
-}
 function App() {
   return (
     <>
-    <Router>
-      <Header />
+      <Router>
+        <Header />
 
-      <Switch>
-        
-        <Route exact path="/">
-          <Home />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route path="/about">
-          <About />
-        </Route>
+          <Route path="/about">
+            <About />
+          </Route>
 
-        <Route path="/works">
-          <Works />
-        </Route>
-        <Route  path="/work/:productName">
-          <WorkDetail />
-        </Route>
+          <Route path="/works">
+            <Works />
+          </Route>
+          <Route path="/work/:productName">
+            <WorkDetail />
+          </Route>
 
-        <Route path="/contact">
-          <Contact />
-        </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
 
-        <Route path="*">
-          <h1>404 Not found!</h1>
-        </Route>
-        
-      </Switch>
-      <Footer />
-    </Router>
+          <Route path="*">
+            <h1>404 Not found!</h1>
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 }
