@@ -12,8 +12,9 @@ import NotFound from './components/notFound/NotFound';
 const App = () => {
   return (
     <div>
-      <Header></Header>
       <Router>
+        <Header></Header>
+
         <Switch>
           <Route path="/home">
             <Home></Home>
@@ -34,8 +35,8 @@ const App = () => {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
-      <Footer></Footer>
     </div>
   );
 };
