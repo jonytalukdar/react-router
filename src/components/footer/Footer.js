@@ -3,7 +3,9 @@ import React from 'react';
 const Foter = () => {
   return (
     <div>
-      <h1>this is foooter</h1>
+      <p style={{ textAlign: 'center', backgroundColor: '#ddd' }}>
+        this is foooter
+      </p>
     </div>
   );
 };
