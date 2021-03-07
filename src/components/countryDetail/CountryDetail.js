@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Card } from 'react-bootstrap';
 
 const CountryDetail = () => {
   const { name } = useParams();
@@ -12,10 +13,20 @@ const CountryDetail = () => {
   }, []);
 
   return (
-    <div>
-      <h1>this is country details</h1>
-      {countryDetails.map((list) => (
-        <li>{list.name}</li>
+    <div className="text-center">
+      {countryDetails.map((country) => (
+        <Card style={{ width: '25rem', margin: '0 auto' }}>
+          <Card.Img variant="top" src={country.flag} />
+          <Card.Body>
+            <Card.Title>
+              <h2>{country.name}</h2>
+            </Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+          </Card.Body>
+        </Card>
       ))}
     </div>
   );
