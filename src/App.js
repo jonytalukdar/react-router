@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/notFound/NotFound';
+import CountryDetail from './components/countryDetail/CountryDetail';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home></Home>
+          </Route>
+          <Route path="/country/:name">
+            <CountryDetail></CountryDetail>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

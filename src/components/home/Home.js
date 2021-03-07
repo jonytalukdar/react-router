@@ -6,11 +6,13 @@ const Home = () => {
   useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
       .then((response) => response.json())
-      .then((data) => setCountry(data));
+      .then((data) => {
+        setCountry(data);
+        console.log(data);
+      });
   }, []);
   return (
     <div>
-      <h1>this is home components</h1>
       {country.map((list) => (
         <Country list={list}></Country>
       ))}
