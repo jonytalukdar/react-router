@@ -15,16 +15,19 @@ const CountryDetail = () => {
   return (
     <div className="text-center">
       {countryDetails.map((country) => (
-        <Card style={{ width: '25rem', margin: '0 auto' }}>
+        <Card
+          key={country.name}
+          style={{ width: '20rem', margin: '0 auto', marginTop: '12px' }}
+        >
           <Card.Img variant="top" src={country.flag} />
           <Card.Body>
             <Card.Title>
               <h2>{country.name}</h2>
             </Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+            <h4>Capital : {country.capital}</h4>
+            <p>Population : {country.population}</p>
+            <p>Region: {country.region}</p>
+            <p>Languages: {country.languages[0].name}</p>
           </Card.Body>
         </Card>
       ))}
